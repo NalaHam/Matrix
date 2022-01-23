@@ -1,0 +1,16 @@
+x <- matrix(1:16, nrow=4, dimnames = list(c("EXITS", "LOY", "Hormones", "Epigenetics"), 
+                                          c("EXITS", "LOY", "Hormones", "Epigenetics")))
+x
+y <- c(7,4,2,2,4,3,0,2,2,0,5,3,2,2,3,5)
+y
+dim(y) <- c(4,4)
+y
+class(y)
+colnames(y) <- c("EXITS", "LOY", "Hormones", "Epigenetics")
+rownames(y) <- c("EXITS", "LOY", "Hormones", "Epigenetics")
+y
+
+library(igraph)
+g <- graph.adjacency(y, mode="undirected", weighted=NULL)
+g
+plot(g)
